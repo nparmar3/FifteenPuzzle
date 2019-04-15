@@ -1,6 +1,6 @@
 
 body {
-	background-image: url(spongebobback.jpg);
+	background-image: spongebobback.jpg;
 	background-repeat: no-repeat;
     background-size: cover;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -46,7 +46,7 @@ h1 {
 
 /* This class should be applied to each of the 15 puzzle pieces. */
 .puzzlepiece {
-	/*background-image: url(background.jpg); */
+	background-image: url(background.jpg); 
 	border: 2px solid black;
 	height: 96px;
 	line-height: 96px;

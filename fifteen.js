@@ -169,7 +169,7 @@ function Notify() //notifies the user
 
 		var body = document.getElementsByTagName('body'); //retrieves body element in html
 
-		body[0].style.backgroundImage= "none"; //reverts to original page background
+		body[0].style.backgroundImage= "background.jpg"; //reverts to original page background
 
 		alert('CONGRATZ, YOU WON!!'); //tells the user that they have won the game 
 
