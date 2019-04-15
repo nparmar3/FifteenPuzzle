@@ -37,10 +37,11 @@ h1 {
 
 /* The area that holds the 15 puzzle pieces. */
 #puzzlearea {
-	font-size: 32px;
+	font-size: 1px;
 	height: 400px;
 	padding: 0px;
 	position: relative;
+	color:white;
 }
 
 /* This class should be applied to each of the 15 puzzle pieces. */
