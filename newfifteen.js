@@ -108,6 +108,16 @@ function changeBackground() {
  * Afterwards, the moved to and moved from are swapped in the shuffled array.
  * Finally, after all of the different possible shuffles, the displayBoard() function is called to display the board.
  */
+ var timerVar = setInterval(countTimer, 1000);
+var totalSeconds = 0;
+function countTimer() {
+   ++totalSeconds;
+   var hour = Math.floor(totalSeconds /3600);
+   var minute = Math.floor((totalSeconds - hour*3600)/60);
+   var seconds = totalSeconds - (hour*3600 + minute*60);
+
+   document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
+}
 function shuffleBoard() {
     shuffled = ids.slice(); // Reinitialize the shuffled array
     var sixteen = 15;
@@ -152,6 +162,7 @@ function shuffleBoard() {
     }
 
     displayBoard();
+	
 }
 
 /**

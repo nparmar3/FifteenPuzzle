@@ -2,7 +2,8 @@
 	<head>
         <meta charset="UTF-8">
         <title>Fifteen Puzzle</title>
-        <link rel="stylesheet" href="stylesheet.css" />
+        <link rel="stylesheet" href="newfifteen.css" />
+		<script src="newfifteen.js" type="text/javascript"></script>
     </head>
     <body onload="initializeGame()">
         <div id="wrapper">
@@ -41,7 +42,8 @@
             </div>
     
             <button onclick="shuffleBoard()">Shuffle</button>
-    
+			<div id="timer"></div>
+			<button id ="stop_timer" onclick="clearInterval(timerVar)">Stop time</button>
             <p>
                 American puzzle author and mathematician Sam Loyd is often falsely credited with creating the puzzle; indeed,
                 Loyd claimed from 1891 until his death in 1911 that he invented it. The puzzle was actually created around 1874
