@@ -3,6 +3,8 @@ html, body {
     background: url("spongebobback.jpg");
 	background-repeat: no-repeat;
     background-size: cover;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
 }
 
 #timer{
@@ -42,8 +44,13 @@ html, body {
 }
 
 h1 {
+     margin: 10px 0px;
     text-align: center;
-    margin: auto;
+    background-color: yellow;   
+    font-family: Bookman Old Style;
+    color: black;       
+    border: 5px dashed orange;
+    padding: 10px;
 }
 
 button, select {
