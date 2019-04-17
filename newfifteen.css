@@ -1,10 +1,42 @@
 html, body {
     height: 100%;
     background: url("spongebobback.jpg");
-	background-repeat: no-repeat;
+	/*background-repeat: no-repeat;*/
     background-size: cover;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-family: "Comic Sans", Helvetica, Arial, sans-serif;
+	font-size: 20px;
+}
+p {
+	font-family: Comic Sans;
+	font-size: 20px;
+	text-align: center;
+}
+
+table {
+	font-family: Arial;
+	border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+}
+th {
+	text-align: center;
+	border: 1px solid black;
+	padding: 8px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	color: black;
+}
+td {
+	border: 1px solid black;
+	padding: 8px;
+}
+h1 {
+    text-align: center;
+	background-color: yellow; 	
+	font: Bookman Old Style;
+	color: black; 		
+	border: 5px dashed orange;
+	padding: 10px;
 }
 
 #timer{
@@ -43,15 +75,6 @@ html, body {
     text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px white;
 }
 
-h1 {
-     margin: 10px 0px;
-    text-align: center;
-    background-color: yellow;   
-    font-family: Bookman Old Style;
-    color: black;       
-    border: 5px dashed orange;
-    padding: 10px;
-}
 
 button, select {
     display: block;
@@ -72,16 +95,16 @@ a {
     background: url("spongebob.jpg"); 
 }
 
-.sandy { 
-    background: url("sandy.jpg");       
+.jellyfish { 
+    background: url("jellyfish.gif");       
 }
 
-.plankton { 
-    background: url("plankton.jpg");      
+.patrick { 
+    background: url("patrick.jpg");      
 }
 
 .gary { 
-    background: url("gary.jpg");        
+    background: url("gary.gif");        
 }
 
 #one      { background-position: 0      0;      }
