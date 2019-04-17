@@ -25,10 +25,6 @@ var ids_numeric = {
 // Once the person changes the background, the current background is stored here
 var selected_background;
 
-// Maps the available movement. Looking at the ids array above, you can see that at array 0, value one,
-// if the empty block was currently there, it can't move to the top or left, but it can move to the right and the bottom.
-// top right bottom left
-//[ 0,   1,    1,    0  ]
 var movement = [
     [0, 1, 1, 0], //0: one
     [0, 1, 1, 1], //1: two
@@ -48,29 +44,19 @@ var movement = [
     [1, 0, 0, 1]  //15: sixteen
 ];
 
-// The available backgrounds
-var background = ["spongebob", "sandy", "plankton", "krabs"];
 
-/**
- * Initializes the game to play
- * Displays a random image: one of the four possible options from the background array
- * Sets all of the different div (100x100) blocks to have a class of title and the random background
- */
+var background = ["spongebob", "jellyfish", "sandy", "squid"];
+
 function initializeGame() {
     var background_id = Math.floor((Math.random() * 4));
     selected_background = background[background_id];
 
-    document.getElementById(background[background_id]).selected = true; // Grab the selected option and mark it as selected
-
+    document.getElementById(background[background_id]).selected = true; 
     for (var i = 0; i < ids.length - 1; i++) {
         document.getElementById(ids[i]).className = "tile " + background[background_id];
     }
 }
 
-/**
- * Once the user selects a new option from the drop-down menu, the image selected is populated
- * The background image of the main div and each of the block divs is replaced
- */
 function changeBackground() {
     var class_name = document.getElementById("characters").value;
 
@@ -92,22 +78,6 @@ function changeBackground() {
     }
 }
 
-/**
- * Shuffles the board
- * Initializes the shuffle array to regular
- * Sets the empty block position
- * Loops through 500 times making sure the board is really shuffled
- * Generates a random number between 0 and 3: used for the movement array.
- * Checks to see if the movement that it selected for that particular block is set to 1, meaning that it can move,
- * otherwise it keeps trying a new random number.
- *   i.e. if the empty block is in the sixteenth block (helps to look at the ids array), the only movement that it can
- *        do is to the top or to the left (i.e. swap the position with it's neighbor). Otherwise, it can't move
- * Once the corrent movement is generated, the id of that movement is stored in movement_id. Looking at the movement
- * array, you'll notice that its indexes are mapped to top, right, bottom, left. If it needs to move to the top, you'll
- * need to subtract 4 from the current position.
- * Afterwards, the moved to and moved from are swapped in the shuffled array.
- * Finally, after all of the different possible shuffles, the displayBoard() function is called to display the board.
- */
  var timerVar = setInterval(countTimer, 1000);
 var totalSeconds = 0;
 function countTimer() {
@@ -123,7 +93,7 @@ function shuffleBoard() {
     var sixteen = 15;
 
     // Set a loop to go through 3 times
-    for (var i = 0; i < 50; i++) {
+    for (var i = 0; i < 1; i++) {
 
         var movement_id = Math.floor((Math.random() * 4));
 
@@ -207,12 +177,6 @@ function displayBoard() {
     }
 }
 
-/**
- * Swaps the pieces and increments the total number of moves the player has done
- *
- * @param clickable_id
- * @param empty_id
- */
 function swapPieces(clickable_id, empty_id) {
     animateMovement(clickable_id, empty_id);
 
@@ -228,11 +192,7 @@ function swapPieces(clickable_id, empty_id) {
     }, 600);
 }
 
-/**
- * Animates the movement of the blocks
- * @param clickable_id
- * @param empty_id
- */
+
 function animateMovement(clickable_id, empty_id) {
     if (clickable_id - 4 == empty_id) {
         console.log(shuffled[clickable_id]);
@@ -246,23 +206,17 @@ function animateMovement(clickable_id, empty_id) {
     }
 }
 
-/**
- * Checks to see if the user won
- * Converts the two arrays into strings and compares them
- * If the user won, the end date is subtracted from the start date and the milliseconds are converted to seconds
- * The following items are displayed to the winner: total number of time elapsed in seconds, a winning image and
- * the number of moves used to complete the puzzle
- */
 function checkIfWon() {
-    if (ids.toString() == shuffled.toString()) { // Test the image, time and number of turns by swapping == to !=
+    if (ids.toString() == shuffled.toString()) {
         var end        = new Date();
         var elapsed_ms = end - start;
         var seconds    = Math.round(elapsed_ms / 1000);
 
         var html = "";
-        html += "<img src='win.gif' alt='You win' />";
-        html += "<p>Total time it took you to solve this puzzle (in seconds): " + seconds + "</p>";
-        html += "<p>Total number of moves it took you to solve this puzzle: " + moves + "</p>";
+		html += "<p>Time(in seconds): " + seconds + "</p>";
+        html += "<p>Moves: " + moves + "</p>";
+        html += "<img src='spongeyes.gif' alt='You win' />";
+		
 
         document.getElementById("win").innerHTML = html;
     }
