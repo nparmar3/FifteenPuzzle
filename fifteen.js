@@ -92,11 +92,9 @@ function shuffleBoard() {
     shuffled = ids.slice(); // Reinitialize the shuffled array
     var sixteen = 15;
 
-    // Set a loop to go through 3 times
-    for (var i = 0; i < 10; i++) {
-
+    // Set a loop to go through however many times you'd like
+    for (var i = 0; i < 25; i++) {
         var movement_id = Math.floor((Math.random() * 4));
-
         while(movement[sixteen][movement_id] != 1) {
             movement_id = Math.floor((Math.random() * 4));
         }
