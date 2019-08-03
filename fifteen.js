@@ -93,7 +93,7 @@ function shuffleBoard() {
     var sixteen = 15;
 
     // Set a loop to go through 3 times
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 10; i++) {
 
         var movement_id = Math.floor((Math.random() * 4));
 
